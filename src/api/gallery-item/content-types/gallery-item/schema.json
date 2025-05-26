@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gallery_items",
+  "info": {
+    "singularName": "gallery-item",
+    "pluralName": "gallery-items",
+    "displayName": "GalleryItem"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "single",
+        "beforeAfter"
+      ],
+      "required": true,
+      "default": "single"
+    },
+    "imageUrl": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "beforeImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "afterImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "work_example": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::work-example.work-example",
+      "inversedBy": "gallery_items"
+    }
+  }
+}

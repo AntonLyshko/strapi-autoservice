@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_examples",
+  "info": {
+    "singularName": "work-example",
+    "pluralName": "work-examples",
+    "displayName": "WorkExample",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "mainPreviewImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "completionDate": {
+      "type": "date"
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service",
+      "mappedBy": "work_example"
+    },
+    "gallery_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::gallery-item.gallery-item",
+      "mappedBy": "work_example"
+    }
+  }
+}

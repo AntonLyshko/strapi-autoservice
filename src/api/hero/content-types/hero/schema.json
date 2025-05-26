@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "heroes",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heroes",
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "secondTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "backgroundImage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

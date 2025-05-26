@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "service_id": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "fullDescription": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "galleryThumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "work_example": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::work-example.work-example",
+      "inversedBy": "services"
+    }
+  }
+}

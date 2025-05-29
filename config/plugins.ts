@@ -1,6 +1,4 @@
-// config/plugins.js
 module.exports = ({ env }) => ({
-	// ... другие конфигурации плагинов
 	documentation: {
 		enabled: true,
 		config: {
@@ -9,23 +7,13 @@ module.exports = ({ env }) => ({
 				version: '1.0.0',
 				title: 'Документация API Моего Автосервиса',
 				description: 'API для взаимодействия с контентом автосервиса',
-				// ... другая информация
 			},
-			// Если вы хотите ограничить доступ к UI документации
-			// 'x-strapi-config': {
-			//   rateLimit: {
-			//     max: 5, // Пример ограничения
-			//     interval: 60000,
-			//   },
-			//   auth: false, // Установите true, если нужен какой-то механизм аутентификации
-			// },
 			servers: [
 				{
-					url: env('STRAPI_URL', 'http://localhost:1337'),
-					description: 'Development server',
+					url: env('STRAPI_PUBLIC_URL', 'https://tradeauto-group.ru'),
+					description: 'Production server',
 				},
 			],
-			// Можно добавить компоненты безопасности, если используете API токены
 			components: {
 				securitySchemes: {
 					bearerAuth: {
@@ -36,7 +24,6 @@ module.exports = ({ env }) => ({
 				},
 			},
 			security: [
-				// Применить bearerAuth ко всем эндпоинтам по умолчанию
 				{
 					bearerAuth: [],
 				},
